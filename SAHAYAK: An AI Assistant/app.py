@@ -13,8 +13,8 @@ from deep_translator import GoogleTranslator
 app = Flask(__name__)
 
 # Set API Keys
-os.environ["OPENAI_API_KEY"] = "sk-proj-4m1QE3nh6fWaJrSfalr1T3BlbkFJYtPemwzK9dgSqp0AdnmU"
-os.environ["GROQ_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
+os.environ["GROQ_API_KEY"] = ""
 
 # LangChain setup
 db = SQLDatabase.from_uri("sqlite:///internship.db")
@@ -119,6 +119,7 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
 
