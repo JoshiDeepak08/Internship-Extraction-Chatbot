@@ -194,23 +194,13 @@ Open this in your browser to use the chatbot.
 
 ```mermaid
 flowchart TD
+A["User Question (Any Language)"] --> B["Flask Route"]
+B --> C["Translate to English\ndeep-translator"]
+C --> D["LangChain SQL Query Chain"]
+D --> E["Generated SQL Query"]
+E --> F["Execute on SQLite DB"]
+F --> G["Raw SQL Result Rows"]
 
-A[User Question<br>(Any Language)] --> B[Flask Route /]
-B --> C[Translate to English<br>deep-translator]
-C --> D[LangChain SQL Chain<br>create_sql_query_chain]
-D --> E[Generated SQL Query]
-E --> F[Execute on SQLite DB<br>internship.db]
-F --> G[Raw SQL Result Rows]
-
-G --> H[Table Builder<br>HTML Internship Table]
-G --> I[Answer Prompt + LLM<br>ChatGroq llama3-8b]
-I --> J[English Natural Language Answer]
-J --> K[Translate Back to User Language]
-
-H --> L[Rendered HTML Template]
-K --> L
-
-L --> M[Chat UI with History]
 ```
 
 ---
